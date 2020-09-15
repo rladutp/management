@@ -85,6 +85,17 @@ public class Management {
             BeanUtils.copyProperties(this, orderDenied);
             orderDenied.publishAfterCommit();
 
+        } else if(this.getStatus().equals("OrderCanceled")) {
+            System.out.println("test OrderCanceled");
+            CancelOrderRequested cancelOrderRequested = new CancelOrderRequested();
+
+            cancelOrderRequested.setOrderId(this.getOrderId());
+            cancelOrderRequested.setStatus(this.getStatus());
+            cancelOrderRequested.setDriverId(this.getDriverId());
+
+            BeanUtils.copyProperties(this, cancelOrderRequested);
+            cancelOrderRequested.publishAfterCommit();
+
         }
     }
 

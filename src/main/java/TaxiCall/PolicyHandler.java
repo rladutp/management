@@ -70,14 +70,12 @@ public class PolicyHandler{
         /* 20200910 추가 확인 필요 */
         if(orderCanceled.isMe()){
             System.out.println("##### listener RequestCancelOrder : " + orderCanceled.toJson());
-            Management management = new Management();
 
-            management.setStatus("OrderCanceled");
-            management.setDriverId(orderCanceled.getDriverId());
-            management.setOrderId(orderCanceled.getOrderId());
-            management.setLocation(orderCanceled.getLocation());
-
-            managementRepository.save(management);
+            managementRepository.findById(Long.valueOf(orderCanceled.getOrderId())).ifPresent((Management)->{
+                Management.setDriverId(orderCanceled.getDriverId());
+                Management.setStatus("OrderCanceled");
+                managementRepository.save(Management);
+            });
         }
     }
 
