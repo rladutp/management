@@ -68,4 +68,4 @@ spring:
           contentType: application/json
 api:
   url:
-    driver: http://Driver:8080
+    driver: http://a-driver:8080
