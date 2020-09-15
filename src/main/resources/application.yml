@@ -66,6 +66,3 @@ spring:
         event-out:
           destination: TaxiCall
           contentType: application/json
-api:
-  url:
-    driver: http://a-driver:8080
