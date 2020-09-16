@@ -2,8 +2,8 @@ version: 0.2
 
 env:
   variables:
-    IMAGE_REPO_NAME: "a-management"
-    _PROJECT_NAME: "a-management"
+    IMAGE_REPO_NAME: "dh-management"
+    _PROJECT_NAME: "dh-management"
 
 phases:
   install:

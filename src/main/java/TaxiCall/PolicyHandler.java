@@ -23,15 +23,15 @@ public class PolicyHandler{
 
         if(ordered.isMe()){
 
-            System.out.println("##### listener RequestConfirmOrder : " + ordered.toJson());
-            Management management = new Management();
+                System.out.println("##### listener RequestConfirmOrder : " + ordered.toJson());
+                Management management = new Management();
 
-            management.setStatus("Ordered");
-            management.setDriverId(ordered.getDriverId());
-            management.setOrderId(ordered.getOrderId());
-            management.setLocation(ordered.getLocation());
+                management.setStatus("Ordered");
+                management.setDriverId(ordered.getDriverId());
+                management.setOrderId(ordered.getOrderId());
+                management.setLocation(ordered.getLocation());
 
-            managementRepository.save(management);
+                managementRepository.save(management);
         }
     }
 
